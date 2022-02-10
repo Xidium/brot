@@ -21,9 +21,9 @@ bruv_list = [
 'bruv',
 'brut',
 'brunt',
+'bruck',
 'bruc',
 'bruk',
-'bruck',
 'brub',
 'brug',
 'bruh',
@@ -57,15 +57,19 @@ async def on_message(message):
 
     if  message.content.lower() == '!globalbrutscore':
         await brut.GetTopBrutHighScores(message)
+        return
     
     if message.content.lower() == '!channelbrutscore':
         await brut.GetChannelBrutHighScores(message)
+        return
     
     if message.content.lower() == '!serverbrutscore':
         await brut.GetServerBrutHighScores(message)
+        return
     
     if message.content.lower() == '!mybrutscore':
         await brut.GetUserBrutScore(message)
+        return
 
     #Check for brutlist match
     for bruv in bruv_list:
@@ -77,6 +81,7 @@ async def on_message(message):
                 matched_string = 'miss'
             #Send message and log
             await brut.Brut(message, matched_string)
+            return
 
 
 
