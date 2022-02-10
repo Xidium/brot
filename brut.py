@@ -166,7 +166,7 @@ async def GetTopBrutHighScores(message):
     From brut
 
     Group By UserName
-    Order By brutScore Desc
+    Order By Sum(BrutScore) Desc
     Limit 10
     '''
        
@@ -187,7 +187,7 @@ async def GetServerBrutHighScores(message):
     GuildID = '{message.guild.id}'
     
     Group By UserName
-    Order By brutScore Desc
+    Order By Sum(brutScore) Desc
     Limit 10
     '''
 
