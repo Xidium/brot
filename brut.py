@@ -103,7 +103,7 @@ async def GetChannelBrutHighScores(message):
 
     scores = cur.execute(sql_query).fetchall()    
 
-    response_string = f'```brut Leaderboard for channel {message.channel.name}\n'
+    response_string = f'```Brut Leaderboard for channel {message.channel.name}\n'
     formatted_table = FormatTable(('Score','UserName'),scores)
     response_string = response_string + formatted_table + '```'
 
@@ -152,7 +152,7 @@ async def GetUserBrutScore(message):
     scores= ((cur_channel_score),(cur_server_score),(cur_total_score))
 
 
-    response_string = f'```{message.author.name} brut Stats\n'+ FormatTable(('Type','Score'),scores) + '```'
+    response_string = f'```{message.author.name} Brut Stats\n'+ FormatTable(('Type','Score'),scores) + '```'
     #formatted_table = FormatTable(('Type','Score'),scores)
     await message.channel.send(response_string)
 
@@ -171,7 +171,7 @@ async def GetTopBrutHighScores(message):
     '''
        
     scores = cur.execute(sql_query).fetchall()
-    response_string = f'```Global brut Leaderboard\n'+ FormatTable(('Type','Score'),scores) + '```'
+    response_string = f'```Global Brut Leaderboard\n'+ FormatTable(('Type','Score'),scores) + '```'
     await message.channel.send(response_string)
 
 async def GetServerBrutHighScores(message):
@@ -192,7 +192,7 @@ async def GetServerBrutHighScores(message):
     '''
 
     scores = cur.execute(sql_query).fetchall()
-    response_string = f'```{message.guild.name} brut Leaderboard\n'+ FormatTable(('Type','Score'),scores) + '```'
+    response_string = f'```{message.guild.name} Brut Leaderboard\n'+ FormatTable(('Type','Score'),scores) + '```'
     await message.channel.send(response_string)
 
 
